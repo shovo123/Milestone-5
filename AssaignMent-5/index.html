@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-5</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="m-5 max-w-7xl mx-auto">
+    <!-- navbar section -->
+    <header class="my-12">
+        <div class="navbar md:flex bg-base-100 w-full rounded-lg bg-slate-200 md:px-10 py-5">
+            <div class="navbar-start grid">
+                <p class="normal-case text-5xl font-bold">Interactive <br>
+                    <span class="text-2xl">Geometry Genius</span>
+                </p>
+            </div>
+            <div class="navbar-end">
+                <a onclick="blogBtn()" id="btn-blog" class="btn bg-[#1090D8]  border-blue-500 normal-case">Blog</a>
+            </div>
+        </div>
+    </header>
+    <!-- main section -->
+    <main>
+        <section class="lg:flex gap-3 mx-auto w-full h-auto">
+            <div onmouseenter="mouseOver()" id="all-card" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto md:w-3/4 gap-3 overflow-hidden p-3">
+                <!-- triangle Card -->
+                <div class="card w-full shadow-xl py-8 px-3 h-auto">
+                    <figure><img src="images/triangle.png" alt="Triangle" /></figure>
+                    <div class="card-body">
+                        <h2 id="title-triangle" class="card-title mx-auto font-bold text-2xl">Triangle</h2>
+                        <p class="text-center text-lg ">Area (A) = 0.5 x b x h</p>
+                        <div class="flex items-center mx-auto">
+                            <input id="base-triangle" type="text" placeholder="b" class="input w-16 max-w-xs bg-slate-200" />
+                            <p class="pl-1 pr-2">cm</p>
+                            <input id="height-triangle" type="text" placeholder="h" class="input w-16 max-w-xs bg-slate-200" />
+                            <p class="pl-1">cm</p>
+                        </div>
+                        <button id="btn-triangle" class="btn bg-[#1090D8] w-full text-xl border-blue-500 normal-case ">Calculate</button>
+                    </div>
+                </div>
+                <!-- Rectangle Card -->
+                <div class="card w-full shadow-xl py-8 px-3 h-auto">
+                    <figure><img src="images/rectangle.png" alt="Triangle" /></figure>
+                    <div class="card-body">
+                        <h2 id="title-rectangle" class="card-title mx-auto font-bold text-2xl">Rectangle</h2>
+                        <p class="text-center text-lg ">Area (A) = w x l</p>
+                        <div class="flex items-center">
+                            <input id="width-rectangle" type="text" placeholder="w" class="input w-16 max-w-xs bg-slate-200" />
+                            <p class="pl-1 pr-2">cm</p>
+                            <input id="length-rectangle" type="text" placeholder="l" class="input w-16 max-w-xs bg-slate-200" />
+                            <p class="pl-1">cm</p>
+                        </div>
+                        <button id="btn-rectangle" class="btn bg-[#1090D8] w-full text-xl border-blue-500 normal-case ">Calculate</button>
+                    </div>
+                </div>
+                <!-- Parallelogram Card -->
+                <div class="card w-full shadow-xl py-8 px-3 h-auto">
+                    <figure><img src="images/parallelogram.png" alt="Triangle" /></figure>
+                    <div class="card-body">
+                        <h2 id="title-parallelogram" class="card-title mx-auto font-bold text-2xl">Parallelogram</h2>
+                        <p class="text-center text-lg ">Area (A) = b x h</p>
+                        <div class="flex items-center mx-auto">
+                            <input id="base-parallelogram" type="text" placeholder="b" class="input w-16 max-w-xs bg-slate-200" />
+                            <p class="pl-1 pr-2">cm</p>
+                            <input id="height-parallelogram" type="text" placeholder="h" class="input w-16 max-w-xs bg-slate-200" />
+                            <p class="pl-1">cm</p>
+                        </div>
+                        <button onclick="parallelogramCalculation()" class="btn bg-[#1090D8] w-full text-xl border-blue-500 normal-case">Calculate</button>
+                    </div>
+                </div>
+                <!-- Rhombus Card -->
+                <div class="card w-full shadow-xl py-8 px-3 h-auto">
+                    <figure><img src="images/rhombus.png" alt="Triangle" /></figure>
+                    <div class="card-body">
+                        <h2 id="title-rhombus" class="card-title mx-auto font-bold text-2xl">Rhombus</h2>
+                        <p class="text-center text-lg ">Area (A) = 0.5 x d<sub>1</sub> x d<sub>2</sub></p>
+                        <div class="flex items-center mx-auto">
+                            <input id="d1-rhombus" type="text" placeholder="d1" class="input w-16 max-w-xs bg-slate-200" />
+                            <p class="pl-1 pr-2">cm</p>
+                            <input id="d2-rhombus" type="text" placeholder="d2" class="input w-16 max-w-xs bg-slate-200" />
+                            <p class="pl-1">cm</p>
+                        </div>
+                        <button onclick="rhombusCalc()" class="btn bg-[#1090D8] w-full text-xl border-blue-500 normal-case">Calculate</button>
+                    </div>
+                </div>
+                <!-- Pentagon Card -->
+                <div class="card w-full shadow-xl py-8 px-3 h-auto">
+                    <figure><img src="images/pentagon.png" alt="Triangle" /></figure>
+                    <div class="card-body">
+                        <h2 id="title-pentagon" class="card-title mx-auto font-bold text-2xl">Pentagon</h2>
+                        <p class="text-center text-lg ">Area (A) = 0.5 x p x b</p>
+                        <div class="flex items-center mx-auto">
+                            <input id="p-pentagon" type="text" placeholder="p" class="input w-16 max-w-xs bg-slate-200" />
+                            <p class="pl-1 pr-2">cm</p>
+                            <input id="a-pentagon" type="text" placeholder="a" class="input w-16 max-w-xs bg-slate-200" />
+                            <p class="pl-1">cm</p>
+                        </div>
+                        <button onclick="pentagonCalc()" class="btn bg-[#1090D8] w-full text-xl border-blue-500 normal-case">Calculate</button>
+                    </div>
+                </div>
+                <!-- Ellipse Card -->
+                <div class="card w-full shadow-xl py-8 px-3 h-auto">
+                    <figure><img src="images/ellipse.png" alt="Triangle" /></figure>
+                    <div class="card-body">
+                        <h2 id="title-ellipse" class="card-title mx-auto font-bold text-2xl">Ellipse</h2>
+                        <p class="text-center text-lg">Area (A) = &pi;ab </p>
+                        <div class="flex items-center mx-auto">
+                            <input id="a-ellipse" type="text" placeholder="a" class="input w-16 max-w-xs bg-slate-200" />
+                            <p class="pl-1 pr-2">cm</p>
+                            <input id="b-ellipse" type="text" placeholder="b" class="input w-16 max-w-xs bg-slate-200" />
+                            <p class="pl-1">cm</p>
+                        </div>
+                        <button onclick="ellipseCalc()" class="btn bg-[#1090D8] w-full text-xl border-blue-500 normal-case">Calculate</button>
+                    </div>
+                </div>
+            </div>
+              <!-- table section -->
+              <div class=" md:w-2/6">
+                <h1 class="font-bold text-xl text-center mb-6 underline underline-offset-2">Area Calculation</h1>
+                <div class="overflow-x-auto">
+                    <table class="table w-auto">
+                        <!-- table body -->
+                        <tbody id="table-body">
+                            <!-- row 1 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- js file -->
+    <script src="calculation.js"></script>
+
+</body>
+
+</html>
+

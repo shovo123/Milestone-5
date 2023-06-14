@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <main>
+        <section class="max-w-5xl mx-auto my-8 px-5">
+            <div>
+                <h1 class="text-6xl text-center font-bold mb-12">Common Question of DOM</h1>
+            </div>
+            <div>
+                <h1 class="text-2xl font-bold">1. What is DOM and what is the purpose of DOM?</h1>
+                <p class="text-justify my-5">The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way,
+                    programming languages can interact with the page.</p>
+                <h1 class="text-2xl font-bold">2. How will you select HTML elements using DOM? Name the DOM methods?</h1>
+                <p class="text-justify mt-5">JavaScript is most commonly used to get or modify the content or value of the HTML elements on the page, as well as to apply some effects like show, hide, animations etc. But, before you can perform any action you need to find or select
+                    the target HTML element.Select HTML elements within a document using JavaScript. There are 5 ways in which you can select elements in a DOM using selectors.
+                    <ol class="list-inside ml-5 mt-3 mb-5">
+                        <li>1. getElementsByTagName()</li>
+                        <li>2. getElementsByClassName()</li>
+                        <li>3. getElementById()</li>
+                        <li>4. querySelector()</li>
+                        <li>5. querySelectorAll()</li>
+                    </ol>
+                </p>
+                <h1 class="text-2xl font-bold">3. What is event bubble?</h1>
+                <p class="text-justify my-5">Event bubbling is a type of DOM event propagation where the event first triggers on the innermost target element, and then successively triggers on the ancestors (parents) of the target element in the same nesting hierarchy till it reaches
+                    the outermost DOM element or document object (Provided the handler is initialized). It is one way that events are handled in the browser. Events are actions done by the user such as a button click, changing a field etc. Event Handlers
+                    are used to execute code when a particular kind of user interface event occurs, such as when a button has been clicked or when a webpage has completed loading.</p>
+                <h1 class="text-2xl font-bold">4. What is a callback function and why will you use it?</h1>
+                <p class="text-justify my-5">A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
+
